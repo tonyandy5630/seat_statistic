@@ -6,7 +6,7 @@ class CollectedShowsController {
     try {
       const collectedShows = await CollectedShows.findAll({});
 
-      return res.status(200).send(collectedShows);
+      return res.status(200).send({ data: { collectedShows } });
     } catch (error) {
       console.log(error);
       next(error);
