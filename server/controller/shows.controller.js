@@ -14,7 +14,7 @@ class ShowController {
     try {
       const shows = await Show.findAll({});
 
-      return res.status(200).send({ data: { shows } });
+      return res.status(200).send(data: { shows } );
     } catch (error) {
       console.log(error);
       next(error);

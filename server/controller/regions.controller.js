@@ -5,7 +5,7 @@ class RegionController {
   static async getAllRegion(req, res, next) {
     try {
       const regions = await Region.findAll({});
-      return res.status(200).send({ data: { regions } });
+      return res.status(200).send({ data: regions });
     } catch (error) {
       console.log(error);
       next(error);

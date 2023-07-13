@@ -5,7 +5,7 @@ class CinemaController {
   static async getAllCinema(req, res, next) {
     try {
       const cinemas = await Cinema.findAll({});
-      return res.status(200).send({ data: { cinemas } });
+      return res.status(200).send({ data: cinemas });
     } catch (err) {
       console.log(err);
       next(err);
