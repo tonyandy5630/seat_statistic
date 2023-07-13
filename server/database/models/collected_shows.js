@@ -20,6 +20,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      recordTime: {
+        type: DataTypes.DATE,
+      },
     },
     {
       timestamps: false,
