@@ -8,13 +8,12 @@ const db = require("./database/models");
 const port = process.env.port || 8080;
 
 app.use(bodyParser.json());
-
 app.use(
   cors({
     origin: process.env.CLIENT_URL, // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // allow session cookie from browser to pass through
-    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
+    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept",
   })
 );
 
