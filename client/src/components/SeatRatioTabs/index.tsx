@@ -1,5 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 
 interface RatioTab {
   value: string;
@@ -8,6 +9,14 @@ interface RatioTab {
 }
 
 export default function RatioTab({ value, keyId, children }: RatioTab) {
-  console.log("loaded " + keyId);
-  return <Box>{value === keyId && children}</Box>;
+  return (
+    <Grid
+      container
+      className='min-w-full'
+      justifyContent='center'
+      alignItems='center'
+    >
+      {value === keyId && children}
+    </Grid>
+  );
 }
