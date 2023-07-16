@@ -1,33 +1,48 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { Cell } from "recharts";
 const Typography = dynamic(() => import("@mui/material/Typography"));
 const PieChartComp = dynamic(() => import("../PieChart"));
-import { RatioDataType } from "../RegionStatisic";
+import { RatioDataType, RatioPerTabTypeResponse } from "@/types/ratio.type";
 import { getPieCellColor } from "@/utils/piechart";
+import formatData from "@/utils/formatData";
+import { AxiosResponse } from "axios";
 const CircularProgress = dynamic(
   () => import("@mui/material/CircularProgress")
 );
 
 interface PieRegion {
   status: any;
-  data: RatioDataType[] | undefined;
+  data: // | RatioDataType[]
+  undefined | AxiosResponse<RatioPerTabTypeResponse, any>;
 }
 
 function PieChartRegion({ status, data }: PieRegion) {
+  const [stat, setStat] = useState<RatioDataType[] | undefined>();
+
+  useEffect(() => {
+    if (status === "success" && data !== undefined) {
+      const allRegionData = data?.data.data;
+      if (allRegionData !== undefined) {
+        const fRegiondata: RatioDataType[] = formatData(allRegionData);
+        setStat(fRegiondata);
+      }
+    }
+  }, [status]);
+
   if (status === "loading") {
     return <CircularProgress />;
   }
 
   if (status === "success") {
-    return data === undefined ? (
+    return stat === undefined ? (
       <Typography>EMPTY STATS</Typography>
     ) : (
-      data.map(({ regionName, data: regData }) => {
+      stat.map(({ tabName, data: regData }) => {
         return (
           <PieChartComp
-            key={regionName}
-            regionName={regionName}
+            key={tabName}
+            regionName={tabName}
             data={regData}
             md={12}
           >

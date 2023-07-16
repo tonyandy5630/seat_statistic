@@ -7,7 +7,9 @@ class MovieController {
       const movies = await Movie.findAll();
       return res.status(200).send({ data: movies });
     } catch (error) {
-      console.log(error);
+      if (!error.statusCode) {
+        error.statusCode = 500;
+      }
       next(error);
     }
   }

@@ -22,6 +22,7 @@ import { RatioType } from "@/types/ratio-layout.type";
 import { useQuery } from "@tanstack/react-query";
 import { getLatestRecordTimeAPI } from "@/apis/time.api";
 import dayjs from "dayjs";
+const CinemaStatistic = dynamic(() => import("@/components/CinemaStatistic"));
 
 export default function MainPage() {
   const theme = useTheme();
@@ -40,8 +41,6 @@ export default function MainPage() {
   function handleTabChange(event: React.SyntheticEvent, newValue: RatioType) {
     setValue(newValue);
   }
-
-  console.log(data?.data.data?.latestRecordTime);
 
   useEffect(() => {
     if (status === "success") {
@@ -133,15 +132,17 @@ export default function MainPage() {
                   >
                     <Tab value={TAB.region} label='Regions' />
                     <Tab value={TAB.cinema} label='Cinemas' />
-                    <Tab value={TAB.film} label='Films' />
+                    <Tab value={TAB.movie} label='Movies' />
                   </Tabs>
                 </Stack>
               </Box>
               <RatioTab value={value} keyId={TAB.region}>
                 <RegionStatistic />
               </RatioTab>
-              <RatioTab value={value} keyId={TAB.cinema}></RatioTab>
-              <RatioTab value={value} keyId={TAB.film}></RatioTab>
+              <RatioTab value={value} keyId={TAB.cinema}>
+                <CinemaStatistic />
+              </RatioTab>
+              <RatioTab value={value} keyId={TAB.movie}></RatioTab>
             </Stack>
           </Grid>
         </Grid>

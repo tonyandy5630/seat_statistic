@@ -1,3 +1,3 @@
-export type RatioType = "region" | "film" | "cinema";
+export type RatioType = "region" | "movie" | "cinema";
 
 export type RegionPercentType = "cinema" | "movies";

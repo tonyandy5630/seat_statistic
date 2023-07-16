@@ -26,7 +26,6 @@ export default function PieChartComp({
       sm={12}
       md={md}
     >
-      {/* test ci/cd */}
       <Box
         sx={{ width: "100%" }}
         className='flex flex-col items-center justify-center'
