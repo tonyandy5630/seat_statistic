@@ -4,9 +4,7 @@ export type RatioResponse = ResponseAPI<{
   data: Array<Object>;
 }>;
 
-export type EachRegionResponse = ResponseAPI<RegionPercentValue[]>;
-
-export type RatioPerMovieResponse = ResponseAPI<RegionPerMoviePercentValue[]>;
+export type RatioPerTabTypeResponse = ResponseAPI<PercentPerValue[]>;
 
 export type PieChartRatio = {
   name: string | number;
@@ -14,7 +12,7 @@ export type PieChartRatio = {
   label?: string;
 };
 
-export type RegionPercentValue = {
+export type PercentPerValue = {
   id: number;
   name: string;
   value: PercentValue[];
@@ -25,8 +23,7 @@ export type PercentValue = {
   percentage: string;
 };
 
-export type RegionPerMoviePercentValue = {
-  name: string;
-  id: number;
-  value: PercentValue[];
-};
+export interface RatioDataType {
+  tabName: string;
+  data: PieChartRatio[];
+}

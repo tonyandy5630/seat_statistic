@@ -3,8 +3,8 @@ import { Box } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 
 interface RatioTab {
-  value: string;
-  keyId: string;
+  value?: string;
+  keyId?: string;
   children?: React.ReactNode;
 }
 

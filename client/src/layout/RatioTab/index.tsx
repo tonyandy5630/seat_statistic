@@ -10,7 +10,7 @@ export default function RatioLayout({ type }: RatioLayoutProps) {
   function getTypeInput(type: RatioType) {
     switch (type) {
       case "cinema":
-      case "film":
+      case "movie":
       case "region":
     }
   }

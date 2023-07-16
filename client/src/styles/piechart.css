@@ -5,3 +5,7 @@
   left: -218px !important;
   top: 0px !important;
 }
+
+.recharts-default-legend {
+  max-width: 340px !important;
+}

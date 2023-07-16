@@ -6,11 +6,22 @@ const app = express();
 const db = require("./database/models");
 
 const port = process.env.port || 8080;
+const whitelist = [
+  process.env.CLIENT_URL_PRODUCTION,
+  process.env.CLIENT_URL_DEVELOPMENT,
+  process.env.CLIENT_URL_DOMAIN,
+];
 
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: process.env.CLIENT_URL, // allow to server to accept request from different origin
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS at " + origin));
+      }
+    }, // allow to server to accept request from different origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // allow session cookie from browser to pass through
     allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept",

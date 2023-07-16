@@ -3,11 +3,11 @@ import { RatioType, RegionPercentType } from "@/types/ratio-layout.type";
 const TAB: {
   region: RatioType;
   cinema: RatioType;
-  film: RatioType;
+  movie: RatioType;
 } = {
   region: "region",
   cinema: "cinema",
-  film: "film",
+  movie: "movie",
 };
 
 const REGION_TAB: {
