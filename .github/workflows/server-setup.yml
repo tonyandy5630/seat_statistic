@@ -9,7 +9,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     name: Build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
@@ -17,10 +17,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
           node-version: 16
-    - name: Install Dependencies
-      run: npm install
-    - name: Build Project
-      run: npm run build
+    - uses: ./
+    - run: npm ci
+    - run: npm run test
             
     - name: Deploy
       run: railway up
