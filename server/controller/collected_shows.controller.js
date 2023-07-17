@@ -2,7 +2,7 @@ const db = require("../database/models");
 const CollectedShows = db.collected_show;
 const {
   QUERY_LATEST_RECORD_TIME,
-} = require("../database/queries/collected-shows.ts");
+} = require("../database/queries/collected-shows");
 
 class CollectedShowsController {
   static async getAllCollectedShows(req, res, next) {

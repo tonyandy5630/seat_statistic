@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const router = require("./routes");
 const app = express();
 const db = require("./database/models");
-
+require("dotenv").config();
 const port = process.env.port || 8080;
 const whitelist = [
   process.env.CLIENT_URL_PRODUCTION,

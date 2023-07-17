@@ -1,4 +1,4 @@
-module.exports = {
+const REGION_QUERY = {
   QUERY_REGION_STAT: `SELECT reg.region,reg.id ,SUM(cshows.seatRatio) as 'TotalSeatRatio', sum(screen.maxSeatQuantity) as 'TotalSeatNumber'  FROM movies.screens as screen
                                     inner join  movies.shows as shows
                                     on screen.screenId = shows.screenId
@@ -53,3 +53,5 @@ on reg.id = cin.regionId
 where shows.IsCollected = 0  and reg.id = ${regId}
 group by  shows.movieName;`,
 };
+
+module.exports = REGION_QUERY;

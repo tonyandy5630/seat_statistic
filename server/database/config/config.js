@@ -16,7 +16,7 @@ module.exports = {
     },
   },
   production: {
-    use_env_variable:
-      "mysql -hcontainers-us-west-173.railway.app -uroot -p0qFoixGijDuAaXELSxh7 --port 5883 --protocol=TCP railway",
+    use_env_variable: "RAILWAY_DB_URL",
+    dialect: "mysql",
   },
 };
