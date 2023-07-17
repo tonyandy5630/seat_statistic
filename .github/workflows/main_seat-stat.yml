@@ -37,6 +37,9 @@ jobs:
           path: .
 
   deploy:
+    defaults:
+          run:
+            working-directory: ./server
     runs-on: ubuntu-latest
     needs: build
     environment:
