@@ -7,6 +7,9 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    defaults:
+        run:
+          working-directory: ./server
     # The type of runner that the job will run on
     name: Build
     runs-on: windows-latest
@@ -18,8 +21,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
           node-version: 18.x
-    - run: cd server
-    - run: ls
     - run: npm ci
     - run: npm run test
             
