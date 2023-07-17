@@ -5,7 +5,7 @@ const {
   QUERY_EACH_REGION_STAT,
   QUERY_EACH_MOVIE_RATE_AT_REGIONS,
   QUERY_EACH_MOVIE_PERCENT_AT_A_REGION,
-} = require("../database/queries/region.ts");
+} = require("../database/queries/region");
 
 class RegionController {
   static async getAllRegion(req, res, next) {

@@ -7,9 +7,7 @@ import { RatioDataType, RatioPerTabTypeResponse } from "@/types/ratio.type";
 import { getPieCellColor } from "@/utils/piechart";
 import formatData from "@/utils/formatData";
 import { AxiosResponse } from "axios";
-const CircularProgress = dynamic(
-  () => import("@mui/material/CircularProgress")
-);
+import CircularProgress from "@mui/material/CircularProgress";
 
 interface PieRegion {
   status: any;
