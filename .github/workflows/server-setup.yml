@@ -18,7 +18,7 @@ jobs:
       with:
           node-version: 18.x
           uses: ./
-    - run : cd D:\Tu\seat_statistic\server
+    - run : cd pwd
     - run: npm ci
     - run: npm run test
             
