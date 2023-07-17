@@ -5,7 +5,7 @@ const router = require("./routes");
 const app = express();
 const db = require("./database/models");
 require("dotenv").config();
-const port = process.env.port || 8080;
+const port = process.env.NODE_ENV === undefined ? 8080 : process.env.PORT;
 const whitelist = [
   process.env.CLIENT_URL_PRODUCTION,
   process.env.CLIENT_URL_DEVELOPMENT,
