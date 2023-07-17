@@ -52,8 +52,11 @@ jobs:
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
+      
         with:
           app-name: 'seat-stat'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4218B8776D7946B3B2B3B7E7D4207F07 }}
           package: .
+      - run: ls
+        
