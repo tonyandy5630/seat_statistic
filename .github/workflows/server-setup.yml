@@ -16,8 +16,10 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+    - name: Use Node 18
+      uses: actions/setup-node@v1
       with:
-          node-version: 16.x
+        node-version: 18.x
     - name: Install Node.js, NPM and Yarn
       uses: actions/setup-node@v1
     - name: Install railway
@@ -26,3 +28,4 @@ jobs:
       run: railway up
       env:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        
