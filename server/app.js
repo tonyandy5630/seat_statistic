@@ -38,5 +38,7 @@ db.sequelize
     console.log("Failed to sync db: " + err.message);
   });
 
-app.listen(port);
-console.log("running on " + port);
+app.listen(port, (err) => {
+  if (err) console.log(err);
+  console.log("running on " + port);
+});
