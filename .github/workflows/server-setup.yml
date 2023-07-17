@@ -13,12 +13,13 @@ jobs:
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
+    - run : pwd
     - name: Install Node.js, NPM and Yarn
       uses: actions/setup-node@v1
       with:
           node-version: 18.x
           uses: ./
-    - run : cd pwd
+   
     - run: npm ci
     - run: npm run test
             
