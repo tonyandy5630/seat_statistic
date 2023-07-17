@@ -19,6 +19,7 @@ jobs:
       with:
           node-version: 18.x
     - run: cd server
+    - run: ls
     - run: npm ci
     - run: npm run test
             
