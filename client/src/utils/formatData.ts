@@ -12,17 +12,23 @@ import {
  */
 
 function formatData(arr: PercentPerValue[]): RatioDataType[] {
-  return arr.map(({ name, value }) => {
+  const data = arr.map(({ name, value }) => {
     const formatData: PieChartRatio[] = formatRawData(value);
     return {
       tabName: name,
       data: formatData,
     };
   });
+
+  return data.filter((data) => data.data.length > 0);
 }
 
 function formatRawData(arr: PercentValue[]): PieChartRatio[] {
-  return arr.map((val) => {
+  const filterNoPercentVal = arr.filter(
+    (val) => parseFloat(parseFloat(val.percentage).toFixed(1)) > 0
+  );
+  if (filterNoPercentVal.length === 0) return [];
+  return filterNoPercentVal.map((val) => {
     const value = parseFloat(parseFloat(val.percentage).toFixed(1));
 
     return { name: val.name, value };

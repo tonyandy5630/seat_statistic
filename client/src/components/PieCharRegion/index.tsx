@@ -44,9 +44,15 @@ function PieChartRegion({ status, data }: PieRegion) {
             data={regData}
             md={12}
           >
-            {regData.map((val, index) => (
-              <Cell key={`cell-${index}`} fill={getPieCellColor(index)} />
-            ))}
+            {regData
+              .sort((a, b) => {
+                if (a.value > b.value) return -1;
+                if (a.value < b.value) return 1;
+                return 0;
+              })
+              .map((val, index) => (
+                <Cell key={`cell-${index}`} fill={getPieCellColor(index)} />
+              ))}
           </PieChartComp>
         );
       })

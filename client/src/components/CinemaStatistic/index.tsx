@@ -1,4 +1,4 @@
-import { getCinemaPerMovieAPI } from "@/apis/ratio.api";
+import { getMoviePerCinemaAPI } from "@/apis/ratio.api";
 import { useQuery } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
 import React from "react";
@@ -8,8 +8,8 @@ const Grid = dynamic(() => import("@mui/material/Unstable_Grid2")); // Grid vers
 
 export default function CinemaStatistic() {
   const { data, status } = useQuery(
-    ["cinema-per-movie-query"],
-    getCinemaPerMovieAPI
+    ["movie-per-cinema-query"],
+    getMoviePerCinemaAPI
   );
 
   return (
