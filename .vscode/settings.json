@@ -2,5 +2,7 @@
     "cSpell.words": [
         "lotte",
         "Regiondata"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/92484cf2-2a10-4a31-9901-b8268671adde/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/seat-stat",
+    "appService.deploySubpath": "."
 }

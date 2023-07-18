@@ -2,10 +2,14 @@
   height: fit-content !important;
   width: 460px !important;
   height: 36px !important;
-  left: -218px !important;
+  left: -243px !important;
   top: 0px !important;
 }
 
 .recharts-default-legend {
   max-width: 340px !important;
+  max-height: 371px;
+  overflow: auto;
+  min-height: 200px;
+  overflow-x: hidden;
 }

@@ -18,9 +18,17 @@ const REGION_TAB: {
   movies: "movies",
 };
 
+const MOVIE_TAB: {
+  cinema: RegionPercentType;
+  region: RegionPercentType;
+} = {
+  cinema: "cinema",
+  region: "region",
+};
+
 const CINEMA = {
   lotte: "lotte",
   cgv: "cgv",
 };
 
-export { TAB, CINEMA, REGION_TAB };
+export { TAB, CINEMA, REGION_TAB, MOVIE_TAB };

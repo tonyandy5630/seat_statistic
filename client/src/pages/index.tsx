@@ -7,7 +7,6 @@ import {
   Typography,
   Select,
   MenuItem,
-  TextField,
   Tabs,
   Tab,
   Box,
@@ -22,6 +21,7 @@ import { RatioType } from "@/types/ratio-layout.type";
 import { useQuery } from "@tanstack/react-query";
 import { getLatestRecordTimeAPI } from "@/apis/time.api";
 import dayjs from "dayjs";
+const MovieStatistic = dynamic(() => import("@/components/MovieStatistic"));
 const CinemaStatistic = dynamic(() => import("@/components/CinemaStatistic"));
 
 export default function MainPage() {
@@ -142,7 +142,9 @@ export default function MainPage() {
               <RatioTab value={value} keyId={TAB.cinema}>
                 <CinemaStatistic />
               </RatioTab>
-              <RatioTab value={value} keyId={TAB.movie}></RatioTab>
+              <RatioTab value={value} keyId={TAB.movie}>
+                <MovieStatistic />
+              </RatioTab>
             </Stack>
           </Grid>
         </Grid>
