@@ -57,7 +57,7 @@ export default function MainPage() {
     <>
       <Container
         maxWidth='lg'
-        className='min-h-screen min-w-screen w-fit md:w-full'
+        className='min-h-screen min-w-screen w-fit md:w-full '
       >
         <Grid
           container
