@@ -55,7 +55,10 @@ export default function MainPage() {
 
   return (
     <>
-      <Container maxWidth='lg' className='min-h-screen'>
+      <Container
+        maxWidth='lg'
+        className='min-h-screen min-w-screen w-fit md:w-full'
+      >
         <Grid
           container
           justifyContent='center'
@@ -96,7 +99,7 @@ export default function MainPage() {
                     onChange={handleChangeCinema}
                   >
                     <MenuItem value={CINEMA.lotte}>Lotte Cinema</MenuItem>
-                    <MenuItem value={CINEMA.cgv}>CGV Cinema</MenuItem>
+                    {/* <MenuItem value={CINEMA.cgv}>CGV Cinema</MenuItem> */}
                   </Select>
                 </Stack>
               </Stack>
