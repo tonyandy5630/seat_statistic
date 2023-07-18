@@ -2,14 +2,29 @@
   height: fit-content !important;
   width: 460px !important;
   height: 36px !important;
-  left: -243px !important;
+  left: 8px !important;
   top: 0px !important;
 }
 
 .recharts-default-legend {
-  max-width: 340px !important;
+  max-width: 236px !important;
   max-height: 371px;
   overflow: auto;
   min-height: 200px;
   overflow-x: hidden;
+}
+
+div.recharts-wrapper {
+  width: 100% !important;
+  padding-left: 121px;
+}
+
+@media only screen and (min-width: 768px) {
+  .recharts-legend-wrapper {
+    left: -243px !important;
+  }
+  div.recharts-wrapper {
+    padding: 0;
+    width: 500px !important;
+  }
 }
