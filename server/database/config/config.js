@@ -18,6 +18,5 @@ module.exports = {
   production: {
     use_env_variable: "RAILWAY_DB_URL",
     dialect: "mysql",
-    dialectModule: "mysql2",
   },
 };
