@@ -54,7 +54,11 @@ export default function MainPage() {
   }, [status]);
 
   return (
-    <Box component={Container} className='min-h-screen w-fit'>
+    <Box
+      component={Container}
+      className='min-h-screen'
+      sx={{ width: "fit-content !important" }}
+    >
       <Grid
         container
         justifyContent='center'
