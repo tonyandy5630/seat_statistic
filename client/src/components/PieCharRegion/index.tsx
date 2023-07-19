@@ -6,9 +6,9 @@ const PieChartComp = dynamic(() => import("../PieChart"));
 import { RatioDataType, RatioPerTabTypeResponse } from "@/types/ratio.type";
 import { getPieCellColor } from "@/utils/piechart";
 import formatData from "@/utils/formatData";
+import { Box } from "@mui/material";
 import { AxiosResponse } from "axios";
 import CircularProgress from "@mui/material/CircularProgress";
-
 interface PieRegion {
   status: any;
   data: // | RatioDataType[]
@@ -43,6 +43,46 @@ function PieChartRegion({ status, data }: PieRegion) {
             regionName={tabName}
             data={regData}
             md={12}
+            legendContent={
+              <ul className='flex flex-col items-start  h-full max-h-[374px] overflow-auto overflow-x-hidden list-disc'>
+                {regData
+                  .sort((a, b) => {
+                    if (a.value > b.value) return -1;
+                    if (a.value < b.value) return 1;
+                    return 0;
+                  })
+                  .map((val, index) => {
+                    return (
+                      <li
+                        key={`item-${index}`}
+                        style={{
+                          color: `${getPieCellColor(index)}`,
+                          textAlign: "start",
+                        }}
+                        className='flex items-baseline justify-center'
+                      >
+                        <Box>
+                          <svg width='15' height='15' className='inline '>
+                            <rect
+                              width='15'
+                              height='15'
+                              style={{
+                                fill: `${getPieCellColor(index)}`,
+                              }}
+                            />
+                          </svg>
+                        </Box>
+                        <Typography className='ml-2'>
+                          <span>{`${val.name}: `}</span>
+                          <span
+                            style={{ fontWeight: "bold" }}
+                          >{`${val.value}%`}</span>
+                        </Typography>
+                      </li>
+                    );
+                  })}
+              </ul>
+            }
           >
             {regData
               .sort((a, b) => {

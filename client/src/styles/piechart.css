@@ -1,9 +1,9 @@
 .recharts-legend-wrapper {
   height: fit-content !important;
   width: 460px !important;
-  height: 36px !important;
   left: 8px !important;
   top: 0px !important;
+  max-width: 215px !important;
 }
 
 .recharts-default-legend {
@@ -26,5 +26,10 @@ div.recharts-wrapper {
   div.recharts-wrapper {
     padding: 0;
     width: 500px !important;
+  }
+
+  div.recharts-legend-wrapper {
+    min-width: 300px;
+    max-width: 325px !important;
   }
 }
