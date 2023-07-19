@@ -61,7 +61,7 @@ function PieChartRegion({ status, data }: PieRegion) {
                         }}
                         className='flex items-baseline justify-center'
                       >
-                        <Box>
+                        <Box sx={{ mr: "4px" }}>
                           <svg width='15' height='15' className='inline '>
                             <rect
                               width='15'
