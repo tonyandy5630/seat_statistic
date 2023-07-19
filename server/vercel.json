@@ -2,9 +2,9 @@
    "version": 2,
    "name": "seat-stat",
    "builds": [
-      { "src": "app.js", "use": "@vercel/node" }
+      { "src": "server/app.js", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/app.js", "methods": ["GET", "POST", "PATCH", "DELETE", "OPTIONS"] }
+      { "src": "/(.*)", "dest": "server/app.js", "methods": ["GET", "POST", "PATCH", "DELETE", "OPTIONS"] }
    ]
 }
