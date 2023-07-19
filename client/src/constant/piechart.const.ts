@@ -28,7 +28,7 @@ export const PIE_CELL_COLORS = [
   "#6C91BF",
   "#5FB0B7",
   "#5BC8AF",
-  "#672A4E",
+  "#DB5375",
   "#820B8A",
   "#FFA69E",
   "#AF9AB2",

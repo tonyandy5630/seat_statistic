@@ -9,6 +9,7 @@ interface PieChartProps {
   data: PieChartRatio[];
   children: any;
   md: number;
+  legendContent: any;
 }
 
 export default function PieChartComp({
@@ -16,6 +17,7 @@ export default function PieChartComp({
   children,
   data,
   md = 6,
+  legendContent,
 }: PieChartProps) {
   return (
     <Grid2
@@ -49,7 +51,7 @@ export default function PieChartComp({
             {children}
           </Pie>
           <Tooltip />
-          <Legend height={36} layout='vertical' />
+          <Legend height={36} content={legendContent} />
         </PieChart>
         <Typography fontWeight='bold'>{regionName}</Typography>
       </Box>
